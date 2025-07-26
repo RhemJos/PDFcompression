@@ -7,7 +7,7 @@ import shutil
 
 LOG_FILE = "./failures.log"
 
-def compress_pdf(input_path, output_path, target_size_mb=1.5, max_quality=40, min_quality=5):
+def compress_pdf(input_path, output_path, target_size_mb=1.4, max_quality=40, min_quality=3):
     """
     Compress a PDF file to approximately target_size_mb using ocrmypdf with quality adjustments.
     """
@@ -195,15 +195,7 @@ def find_and_compress_pdfs(source_dir, dest_dir, max_workers=4):
     print(f"- Skipped (already exists): {skipped_count}")
 
 if __name__ == "__main__":
-    # if len(sys.argv) != 3:
-    #     print("Usage: python compress_pdfs.py <source_directory> <destination_directory>")
-    #     sys.exit(1)
-    
-    # source_dir = sys.argv[1]
-    # dest_dir = sys.argv[2]
-    print("Executing...")
-
-    source_dir = "J:\\OBSCD\\Python compression tests\\ballots\\d10\\b1\\000"
+    source_dir = "J:\\OBSCD\\Python compression tests"
     dest_dir = "J:\\OBSCD\\Python compression test results"
     
     print(f"Starting PDF compression from {source_dir} to {dest_dir}")
